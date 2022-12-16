@@ -1,0 +1,34 @@
+﻿<Window x:Class="SaveDataGrid.DataGridStorage.DgOptionsWnd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SaveDataGrid.DataGridStorage"
+        mc:Ignorable="d"
+        Title="Grid Options" Topmost="True" SizeToContent="WidthAndHeight">
+    <Grid>
+		<Grid.ColumnDefinitions>
+			<!-- data column -->
+			<ColumnDefinition/>
+			<!-- control column -->
+			<ColumnDefinition Width="Auto" MinWidth="80"/>
+		</Grid.ColumnDefinitions>
+
+		<DataGrid ItemsSource="{Binding SettingsList}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Index"				Binding="{Binding Index}" IsReadOnly="True"/>
+				<DataGridTextColumn Header="Header"				Binding="{Binding Header}" IsReadOnly="True"/>
+				<DataGridTextColumn Header="Display Index"		Binding="{Binding DisplayIndex}"/>
+				<DataGridTextColumn Header="Width"				Binding="{Binding Width, StringFormat=#.##}"/>
+				<DataGridCheckBoxColumn Header="Is Visible"		Binding="{Binding IsVisible, UpdateSourceTrigger=PropertyChanged}"/>
+			</DataGrid.Columns>
+		</DataGrid>
+		
+		<!-- control column -->
+		<StackPanel Grid.Column="1">
+			<Button Content="Cancel" IsCancel="True" Click="Button_Click_1"/>
+			<Button Content="Use" Command="{Binding UseCommand}"/>
+			<Button Content="OK" IsDefault="True" Click="Button_Click"/>
+		</StackPanel>
+    </Grid>
+</Window>
