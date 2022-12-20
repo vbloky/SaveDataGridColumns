@@ -101,7 +101,7 @@ namespace SaveDataGrid.DataGridStorage
 			//DisplayIndexes must be set from lowest to highest
 			foreach (var src in SettingsList.OrderBy(p => p.DisplayIndex))
 			{
-				if (src.Index > 0 && src.Index < count)
+				if (src.Index >= 0 && src.Index < count)
 				{
 					_grid.Columns[src.Index].Visibility = src.IsVisible ? Visibility.Visible : Visibility.Collapsed;
 					_grid.Columns[src.Index].DisplayIndex = src.DisplayIndex;

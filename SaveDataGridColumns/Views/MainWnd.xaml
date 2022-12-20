@@ -28,8 +28,8 @@
 
 		<!-- control column -->
 		<StackPanel Grid.Column="1" >
-			<Button x:Name="btnLoad" Content="Load" Command="{Binding LoadCommand}" Click="btnLoad_Click"/>
-			<Button x:Name="btnSave" Content="Save" Command="{Binding SaveCommand}" Click="btnSave_Click"/>
+			<Button x:Name="btnLoad" Content="Load" Click="btnLoad_Click"/>
+			<Button x:Name="btnSave" Content="Save" Click="btnSave_Click"/>
 			<Button x:Name="btnOptions" Content="Options" Click="btnOptions_Click" />
 			<Button x:Name="btnExit" Content="Exit" Click="btnExit_Click"/>
 		</StackPanel>
